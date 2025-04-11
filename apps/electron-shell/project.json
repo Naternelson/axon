@@ -1,0 +1,19 @@
+{
+  "name": "electron-shell",
+  "targets": {
+    "serve": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          {
+            "command": "nx run ui-shell:serve"
+          },
+          {
+            "command": "wait-on http://localhost:4200 && electron apps/electron-shell/src/main.ts"
+          }
+        ],
+        "parallel": true
+      }
+    }
+  }
+}
